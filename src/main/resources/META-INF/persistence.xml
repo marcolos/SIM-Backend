@@ -1,0 +1,19 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="sim-backend" transaction-type="JTA">
+        <jta-data-source>java:jboss/datasources/sim-backendDS</jta-data-source>
+        <class>it.dinfo.stlab.model.UserAccount</class>
+        <class>it.dinfo.stlab.model.AdminAuthorization</class>
+        <class>it.dinfo.stlab.model.Municipality</class>
+        <class>it.dinfo.stlab.model.SmartStation</class>
+        <class>it.dinfo.stlab.model.InfomobilityServiceProvider</class>
+        <class>it.dinfo.stlab.model.ServiceProviderInfo</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
